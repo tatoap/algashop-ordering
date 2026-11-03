@@ -25,7 +25,7 @@ public class CustomerOutput {
     private Integer loyaltyPoints;
     private OffsetDateTime registeredAt;
     private OffsetDateTime archivedAt;
-    private Boolean promotionNotificationAllowed;
+    private Boolean promotionNotificationsAllowed;
     private Boolean archived;
-    private AddressData addressData;
+    private AddressData address;
 }

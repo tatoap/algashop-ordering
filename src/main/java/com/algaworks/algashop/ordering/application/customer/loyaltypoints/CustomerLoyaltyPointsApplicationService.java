@@ -24,10 +24,10 @@ public class CustomerLoyaltyPointsApplicationService {
         Objects.requireNonNull(rawOrderId);
 
         Customer customer = customers.ofId(new CustomerId(rawCustomerId))
-                .orElseThrow(() -> new CustomerNotFoundException(new CustomerId(rawCustomerId)));
+                .orElseThrow(() -> new CustomerNotFoundException());
 
         Order order = orders.ofId(new OrderId(rawOrderId))
-                .orElseThrow(() -> new OrderNotFoundException(rawOrderId));
+                .orElseThrow(() -> new OrderNotFoundException());
 
         customerLoyaltyPointsService.addPoints(customer, order);
 

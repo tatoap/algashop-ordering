@@ -17,7 +17,7 @@ public class ShoppingService {
 
     public ShoppingCart startShopping(CustomerId customerId) {
         if (!customers.exists(customerId)) {
-            throw new CustomerNotFoundException(customerId);
+            throw new CustomerNotFoundException();
         }
 
         if (shoppingCarts.ofCustomer(customerId).isPresent()) {

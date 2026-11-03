@@ -53,6 +53,6 @@ public class OrderManagementApplicationService {
         OrderId orderId = new OrderId(rawOrderId);
 
         return orders.ofId(orderId)
-                .orElseThrow(() -> new OrderNotFoundException(orderId));
+                .orElseThrow(() -> new OrderNotFoundException());
     }
 }

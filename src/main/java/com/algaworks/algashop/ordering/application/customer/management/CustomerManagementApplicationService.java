@@ -51,7 +51,7 @@ public class CustomerManagementApplicationService {
         Objects.requireNonNull(rawCustomerId);
 
         Customer customer = customers.ofId(new CustomerId(rawCustomerId))
-                .orElseThrow(() -> new CustomerNotFoundException(new CustomerId(rawCustomerId)));
+                .orElseThrow(() -> new CustomerNotFoundException());
 
         customer.changeName(new FullName(input.getFirstName(), input.getLastName()));
         customer.changePhone(new Phone(input.getPhone()));
@@ -82,7 +82,7 @@ public class CustomerManagementApplicationService {
         Objects.requireNonNull(customerId);
 
         Customer customer = customers.ofId(new CustomerId(customerId))
-                .orElseThrow(() -> new CustomerNotFoundException(new CustomerId(customerId)));
+                .orElseThrow(() -> new CustomerNotFoundException());
 
         customer.archive();
         customers.add(customer);
@@ -93,7 +93,7 @@ public class CustomerManagementApplicationService {
         Objects.requireNonNull(customerId);
 
         Customer customer = customers.ofId(new CustomerId(customerId))
-                .orElseThrow(() -> new CustomerNotFoundException(new CustomerId(customerId)));
+                .orElseThrow(() -> new CustomerNotFoundException());
 
         customerRegistration.changeEmail(customer, new Email(newEmail));
         customers.add(customer);

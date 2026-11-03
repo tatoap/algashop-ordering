@@ -43,7 +43,7 @@ public class BuyNowApplicationService {
         CustomerId customerId = new CustomerId(input.getCustomerId());
         Quantity quantity = new Quantity(input.getQuantity());
 
-        Customer customer = customers.ofId(customerId).orElseThrow(() -> new CustomerNotFoundException(customerId));
+        Customer customer = customers.ofId(customerId).orElseThrow(() -> new CustomerNotFoundException());
 
         Product product = findProduct(new ProductId(input.getProductId()));
 

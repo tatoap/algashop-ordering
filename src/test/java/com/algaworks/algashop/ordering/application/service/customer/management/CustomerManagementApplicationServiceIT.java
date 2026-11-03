@@ -124,7 +124,7 @@ class CustomerManagementApplicationServiceIT {
                         CustomerOutput::getPhone,
                         CustomerOutput::getDocument,
                         CustomerOutput::getBirthDate,
-                        CustomerOutput::getPromotionNotificationAllowed
+                        CustomerOutput::getPromotionNotificationsAllowed
                 ).containsExactly(
                         "Anonymous",
                                 "Anonymous",
@@ -138,9 +138,9 @@ class CustomerManagementApplicationServiceIT {
         Assertions.assertThat(archivedCustomer.getArchived()).isTrue();
         Assertions.assertThat(archivedCustomer.getArchivedAt()).isNotNull();
 
-        Assertions.assertThat(archivedCustomer.getAddressData()).isNotNull();
-        Assertions.assertThat(archivedCustomer.getAddressData().getNumber()).isNotNull().isEqualTo("Anonymized");
-        Assertions.assertThat(archivedCustomer.getAddressData().getComplement()).isNull();
+        Assertions.assertThat(archivedCustomer.getAddress()).isNotNull();
+        Assertions.assertThat(archivedCustomer.getAddress().getNumber()).isNotNull().isEqualTo("Anonymized");
+        Assertions.assertThat(archivedCustomer.getAddress().getComplement()).isNull();
     }
 
     @Test

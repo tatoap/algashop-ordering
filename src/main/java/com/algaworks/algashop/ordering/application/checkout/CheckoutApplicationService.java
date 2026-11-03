@@ -41,7 +41,7 @@ public class CheckoutApplicationService {
                 .orElseThrow(ShoppingCartNotFoundException::new);
 
         Customer customer = customers.ofId(shoppingCart.customerId())
-                .orElseThrow(() -> new CustomerNotFoundException(shoppingCart.customerId()));
+                .orElseThrow(() -> new CustomerNotFoundException());
 
         ShippingCostService.CalculationResult calculate = shippingCostService.calculate(new ShippingCostService.CalculationRequest(origin, destination));
 

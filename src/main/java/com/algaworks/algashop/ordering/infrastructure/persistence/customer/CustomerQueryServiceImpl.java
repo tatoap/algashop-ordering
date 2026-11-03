@@ -65,7 +65,7 @@ public class CustomerQueryServiceImpl implements CustomerQueryService {
             query.setParameter("id", customerId);
             return query.getSingleResult();
         } catch (NoResultException e) {
-            throw new CustomerNotFoundException(new CustomerId(customerId));
+            throw new CustomerNotFoundException();
         }
     }
 
